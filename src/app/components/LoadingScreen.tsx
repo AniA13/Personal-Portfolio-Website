@@ -34,7 +34,7 @@ export default function LoadingScreen() {
           </div>
           
           {/* Password Text - 25% from right, 68% down */}
-          <div className="absolute right-[62%] top-[64%]">
+          <div className="absolute right-[61%] top-[64%]">
             <span 
               className="text-black text-sm whitespace-pre inline-block text-left"
               style={{ width: '8ch' }} // Ensures consistent width for the password field
