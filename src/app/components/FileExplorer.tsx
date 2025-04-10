@@ -3,7 +3,7 @@ import Image from "next/image";
 import File from "./File";
 import PreviewSection from "./PreviewSection";
 import { useState, useEffect } from "react";
-import { getFileDetails, folderContents, FileDetails } from "../data/fileDetails";
+import { getFileDetails, folderContents} from "../data/fileDetails";
 
 interface FileExplorerProps {
   isOpen: boolean;
