@@ -17,13 +17,16 @@ export default function FileExplorer({ isOpen, onClose, folderName, folderId }: 
       case 'projects':
         return (
           <div className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-2">
-            <File name="Portfolio Website" type="image" />
             <File 
-              name="Project Screenshot.png" 
+              name="Chess With Python" 
               type="image" 
-              imageSrc="/projects/screenshot.png"
+              imageSrc="/ChessWithPythonIcon.png"
             />
-            <File name="Documentation.pdf" type="pdf" />
+            <File 
+              name="NC State Hackathon 25" 
+              type="image" 
+              imageSrc="/HackNcState25.png"
+            />
           </div>
         );
       case 'music':
