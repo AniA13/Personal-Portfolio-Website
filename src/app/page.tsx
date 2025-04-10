@@ -11,7 +11,7 @@ export default function Home() {
 
   const folders = [
     { id: 'projects', name: 'Projects' },
-    //{ id: 'music', name: 'Music' },
+    { id: 'aboutme', name: 'About Me' },
     // Add more folders as needed
   ];
 

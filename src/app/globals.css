@@ -13,9 +13,36 @@
     user-select: none;
     -webkit-user-select: none;
   }
+
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Optional: Add continuous rotation animation */
+  .rotate-3d {
+    animation: rotate3d 5s linear infinite;
+  }
+
+  @keyframes rotate3d {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
 }
-
-
-
-
 

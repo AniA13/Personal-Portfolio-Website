@@ -29,12 +29,12 @@ export default function LoadingScreen() {
         {/* Text Overlay */}
         <div className="absolute inset-0">
           {/* Username Text - 25% from right, 60% down */}
-          <div className="absolute right-[61%] top-[55%]">
+          <div className="absolute right-[61%] lg:right-[62%] top-[55%]">
             <span className="text-black text-sm">Ani_Arvind</span>
           </div>
           
           {/* Password Text - 25% from right, 68% down */}
-          <div className="absolute right-[61%] top-[64%]">
+          <div className="absolute right-[61%] lg:right-[63%] top-[64%]">
             <span 
               className="text-black text-sm whitespace-pre inline-block text-left"
               style={{ width: '8ch' }} // Ensures consistent width for the password field

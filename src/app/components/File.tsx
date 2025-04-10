@@ -5,14 +5,15 @@ interface FileProps {
   name: string;
   type: 'pdf' | 'txt' | 'docx' | 'mp3' | 'image';
   imageSrc?: string;
+  isSelected?: boolean;
   onClick?: () => void;
 }
 
-export default function File({ name, type, imageSrc, onClick }: FileProps) {
+export default function File({ name, type, imageSrc, isSelected, onClick }: FileProps) {
   const getFileIcon = () => {
     switch (type) {
       case 'pdf':
-        return "/file_icons/pdf_icon.png";
+        return "/pdficon.png";
       case 'txt':
         return "/file_icons/txt_icon.png";
       case 'docx':
@@ -28,7 +29,8 @@ export default function File({ name, type, imageSrc, onClick }: FileProps) {
 
   return (
     <div 
-      className="flex flex-col items-center w-24 cursor-pointer p-2 rounded hover:bg-blue-400/20"
+      className={`file-item flex flex-col items-center w-24 cursor-pointer p-2 rounded
+        ${isSelected ? 'bg-blue-100' : 'hover:bg-blue-50'}`}
       onClick={onClick}
     >
       <div className="w-12 h-12 relative mb-1">

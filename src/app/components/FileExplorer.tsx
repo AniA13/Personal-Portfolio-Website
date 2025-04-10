@@ -1,6 +1,9 @@
 'use client';
 import Image from "next/image";
 import File from "./File";
+import PreviewSection from "./PreviewSection";
+import { useState, useEffect } from "react";
+import { getFileDetails, folderContents, FileDetails } from "../data/fileDetails";
 
 interface FileExplorerProps {
   isOpen: boolean;
@@ -10,35 +13,47 @@ interface FileExplorerProps {
 }
 
 export default function FileExplorer({ isOpen, onClose, folderName, folderId }: FileExplorerProps) {
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Only deselect if we click outside both the file-item and preview-section
+      if (!target.closest('.file-item') && !target.closest('.preview-section')) {
+        setSelectedFile(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   if (!isOpen) return null;
 
   const getFolderContent = () => {
-    switch (folderId) {
-      case 'projects':
-        return (
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-2">
-            <File 
-              name="Chess With Python" 
-              type="image" 
-              imageSrc="/ChessWithPythonIcon.png"
-            />
-            <File 
-              name="NC State Hackathon 25" 
-              type="image" 
-              imageSrc="/HackNcState25.png"
-            />
-          </div>
-        );
-      case 'music':
-        return (
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-2">
-            <File name="Placeholder Song.mp3" type="mp3" />
-          </div>
-        );
-      default:
-        return <p>No content available</p>;
+    const content = folderContents[folderId];
+    
+    if (!content) {
+      return <p>No content available</p>;
     }
+
+    return (
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-2">
+        {content.map(file => (
+          <File 
+            key={file.name}
+            name={file.name}
+            type={file.type}
+            imageSrc={file.imageSrc}
+            isSelected={selectedFile === file.name}
+            onClick={() => setSelectedFile(file.name)}
+          />
+        ))}
+      </div>
+    );
   };
+
+  const currentFileDetails = getFileDetails(selectedFile);
 
   return (
     <div 
@@ -69,8 +84,17 @@ export default function FileExplorer({ isOpen, onClose, folderName, folderId }: 
       </div>
       
       {/* Window Content */}
-      <div className="p-4">
-        {getFolderContent()}
+      <div className="flex flex-col md:flex-row h-[calc(100%-2rem)]">
+        {/* Files Grid Section */}
+        <div className="flex-1 p-4 overflow-auto border-b md:border-b-0 md:border-r border-gray-200">
+          {getFolderContent()}
+        </div>
+
+        {/* Preview Section */}
+        <PreviewSection 
+          selectedFile={selectedFile}
+          fileDetails={currentFileDetails}
+        />
       </div>
     </div>
   );
