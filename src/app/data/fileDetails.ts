@@ -25,19 +25,19 @@ export const getFileDetails = (fileName: string | null): FileDetails => {
       - Piece movement highlighting
       - Game state tracking`,
       imageSrc: '/ChessWithPythonIcon.png',
-      url: 'https://github.com/AniA13/chessWithPython' // Replace with actual URL
+      url: 'https://github.com/AniA13/chessWithPython'
     },
     'NC State Hackathon 25': {
       title: 'NC State Hackathon 2025',
       description: 'Project developed during the NC State Hackathon...',
       imageSrc: '/HackNcState25.png',
-      url: 'https://github.com/AdvaitP-1/hackathon' // Replace with actual URL
+      url: 'https://github.com/AniA13/hacknc25'
     },
     'Resume.pdf': {
       title: 'Resume',
       description: 'My resume in PDF format',
       imageSrc: '/pdficon.png',
-      url: '/Resume.pdf' // Replace with actual URL
+      url: '/Resume.pdf'
     }
   };
 
