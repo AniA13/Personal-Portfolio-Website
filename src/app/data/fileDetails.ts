@@ -23,7 +23,7 @@ export const getFileDetails = (fileName: string | null): FileDetails => {
       - Developed frontend with React and JavaScript
       - Integrated frontend with backend APIs
       - Managed database with SQL and tracked changes using Git`,
-      imageSrc: '/wolfcafe.png',
+      imageSrc: '/WolfCafe.png',
 
     },
     'HackNC Fidelity Quickvest AI Hackathon': {
