@@ -15,6 +15,28 @@ export const getFileDetails = (fileName: string | null): FileDetails => {
   }
 
   const fileDetailsMap: Record<string, FileDetails> = {
+    'Wolf Cafe': {
+      title: 'Wolf Cafe',
+      description: `CoffeeMaker backend and frontend for WolfCafe.
+      - Built backend with Java, Spring Boot, Maven, REST APIs
+      - Tested functionality using JUnit
+      - Developed frontend with React and JavaScript
+      - Integrated frontend with backend APIs
+      - Managed database with SQL and tracked changes using Git`,
+      imageSrc: '/wolfcafe.png',
+
+    },
+    'HackNC Fidelity Quickvest AI Hackathon': {
+      title: 'HackNC Fidelity Quickvest AI Hackathon',
+      description: `Voice assistant for guided account setup.
+      - Built with Next.js and React
+      - Voice input and real-time form filling
+      - Clear feedback for smooth signup
+      - ElevenLabs STT/TTS for speech
+      - Gemini 2.5 Flash for data extraction and follow-ups`,
+      imageSrc: '/HackNC2025.png',
+      url: 'https://github.com/AniA13/hacknc2025unc'
+    },
     'Chess With Python': {
       title: 'Chess With Python',
       description: `A fully functional chess game implemented in Python using Pygame.
@@ -27,9 +49,20 @@ export const getFileDetails = (fileName: string | null): FileDetails => {
       imageSrc: '/ChessWithPythonIcon.png',
       url: 'https://github.com/AniA13/chessWithPython'
     },
+    'Cache Forge': {
+      title: 'Cache Forge',
+      description: `A framework for discovering and refining cache replacement policies.
+      - Iterative generator–evaluator workflow
+      - Uses LLM to generate C++ policy code
+      - Compiles and simulates each policy for feedback
+      - Explores algorithmic structure, not just parameters
+      - Maintains memory of past policies and outcomes
+      - Enables experience-driven optimization`,
+      imageSrc: '/CacheForge.png',
+  },
     'NC State Hackathon 25': {
       title: 'NC State Hackathon 2025',
-      description: 'Project developed during the NC State Hackathon...',
+      description: 'Project developed during the NC State Hackathon.',
       imageSrc: '/HackNcState25.png',
       url: 'https://github.com/AniA13/hacknc25'
     },
@@ -56,6 +89,21 @@ export interface FolderContent {
 
 export const folderContents: Record<string, FolderContent[]> = {
   'projects': [
+    {
+      name: 'Cache Forge',
+      type: 'image',
+      imageSrc: '/CacheForge.png'
+    },
+    {
+      name: 'Wolf Cafe',
+      type: 'image',
+      imageSrc: '/wolfcafe.png'
+    },
+    {
+      name: 'HackNC Fidelity Quickvest AI Hackathon',
+      type: 'image',
+      imageSrc: '/HackNC2025.png'
+    },
     {
       name: 'Chess With Python',
       type: 'image',
