@@ -97,7 +97,7 @@ export const folderContents: Record<string, FolderContent[]> = {
     {
       name: 'Wolf Cafe',
       type: 'image',
-      imageSrc: '/wolfcafe.png'
+      imageSrc: '/WolfCafe.png'
     },
     {
       name: 'HackNC Fidelity Quickvest AI Hackathon',
